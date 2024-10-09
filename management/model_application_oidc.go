@@ -48,6 +48,10 @@ type ApplicationOIDC struct {
 	AllowWildcardInRedirectUris *bool `json:"allowWildcardInRedirectUris,omitempty"`
 	// A boolean that specifies whether the permissions service should assign default roles to the application. This property is set only on the POST request. The property is ignored when included in a PUT request.
 	AssignActorRoles *bool `json:"assignActorRoles,omitempty"`
+	// (Required when `clientSecret` is specified.) Supported only for `POST` operations. This is the UUID of an external application that is being migrated to PingOne. The UUID must be a minimum of 8 alpha-numeric characters, and must be globally unique in PingOne.
+	ClientId *string `json:"clientId,omitempty"`
+	// (Required when `clientId` is specified.) Supported only for `POST` operations. This is the client secret associated with `clientId` for an external application that is being migrated to PingOne. This must be a minimum of 8 alpha-numeric characters.
+	ClientSecret *string `json:"clientSecret,omitempty"`
 	CorsSettings *ApplicationCorsSettings `json:"corsSettings,omitempty"`
 	// A string that specifies a unique identifier within an environment for a device authorization grant flow to provide a short identifier to the application. This property is ignored when the `deviceCustomVerificationUri` property is configured. The string can contain any letters, numbers, and some special characters (regex `a-zA-Z0-9_-`). It can have a length of no more than 50 characters (`min`/`max`=`1`/`50`).
 	DevicePathId *string `json:"devicePathId,omitempty"`
@@ -661,6 +665,70 @@ func (o *ApplicationOIDC) HasAssignActorRoles() bool {
 // SetAssignActorRoles gets a reference to the given bool and assigns it to the AssignActorRoles field.
 func (o *ApplicationOIDC) SetAssignActorRoles(v bool) {
 	o.AssignActorRoles = &v
+}
+
+// GetClientId returns the ClientId field value if set, zero value otherwise.
+func (o *ApplicationOIDC) GetClientId() string {
+	if o == nil || IsNil(o.ClientId) {
+		var ret string
+		return ret
+	}
+	return *o.ClientId
+}
+
+// GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApplicationOIDC) GetClientIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ClientId) {
+		return nil, false
+	}
+	return o.ClientId, true
+}
+
+// HasClientId returns a boolean if a field has been set.
+func (o *ApplicationOIDC) HasClientId() bool {
+	if o != nil && !IsNil(o.ClientId) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientId gets a reference to the given string and assigns it to the ClientId field.
+func (o *ApplicationOIDC) SetClientId(v string) {
+	o.ClientId = &v
+}
+
+// GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
+func (o *ApplicationOIDC) GetClientSecret() string {
+	if o == nil || IsNil(o.ClientSecret) {
+		var ret string
+		return ret
+	}
+	return *o.ClientSecret
+}
+
+// GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApplicationOIDC) GetClientSecretOk() (*string, bool) {
+	if o == nil || IsNil(o.ClientSecret) {
+		return nil, false
+	}
+	return o.ClientSecret, true
+}
+
+// HasClientSecret returns a boolean if a field has been set.
+func (o *ApplicationOIDC) HasClientSecret() bool {
+	if o != nil && !IsNil(o.ClientSecret) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
+func (o *ApplicationOIDC) SetClientSecret(v string) {
+	o.ClientSecret = &v
 }
 
 // GetCorsSettings returns the CorsSettings field value if set, zero value otherwise.
@@ -1665,6 +1733,12 @@ func (o ApplicationOIDC) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.AssignActorRoles) {
 		toSerialize["assignActorRoles"] = o.AssignActorRoles
+	}
+	if !IsNil(o.ClientId) {
+		toSerialize["clientId"] = o.ClientId
+	}
+	if !IsNil(o.ClientSecret) {
+		toSerialize["clientSecret"] = o.ClientSecret
 	}
 	if !IsNil(o.CorsSettings) {
 		toSerialize["corsSettings"] = o.CorsSettings

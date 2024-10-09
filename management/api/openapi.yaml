@@ -28159,6 +28159,21 @@ components:
               only on the POST request. The property is ignored when included in a
               PUT request.
             type: boolean
+          clientId:
+            description: "(Required when `clientSecret` is specified.) Supported only\
+              \ for `POST` operations. This is the UUID of an external application\
+              \ that is being migrated to PingOne. The UUID must be a minimum of 8\
+              \ alpha-numeric characters, and must be globally unique in PingOne."
+            minLength: 8
+            type: string
+          clientSecret:
+            description: (Required when `clientId` is specified.) Supported only for
+              `POST` operations. This is the client secret associated with `clientId`
+              for an external application that is being migrated to PingOne. This
+              must be a minimum of 8 alpha-numeric characters.
+            format: password
+            minLength: 8
+            type: string
           corsSettings:
             $ref: '#/components/schemas/ApplicationCorsSettings'
           devicePathId:
@@ -34218,6 +34233,7 @@ components:
         applicationPermissionsSettings:
           claimEnabled: true
         audience: audience
+        clientId: clientId
         _links:
           key:
             href: https://openapi-generator.tech
@@ -34230,6 +34246,7 @@ components:
           id: id
         accessTokenValiditySeconds: 0
         name: name
+        clientSecret: clientSecret
         id: id
         introspectEndpointAuthMethod: null
         updatedAt: 2000-01-23T04:56:07.000+00:00
@@ -34251,6 +34268,21 @@ components:
           description: "A string that specifies a URL without a fragment or `@ObjectName`\
             \ and must not contain `pingone` or `pingidentity` (for example, `https://api.bxretail.org`).\
             \ If a URL is not specified, the resource name is used."
+          type: string
+        clientId:
+          description: "(Required when `clientSecret` is specified.) Supported only\
+            \ for the `POST` operation. This is the UUID of an external resource that\
+            \ is being migrated to PingOne. The UUID must be a minimum of 8 alpha-numeric\
+            \ characters, and must be globally unique in PingOne."
+          minLength: 8
+          type: string
+        clientSecret:
+          description: (Required when clientId is specified.) Supported only for the
+            POST operation. This is the client secret associated with clientId for
+            an external resource that is being migrated to PingOne. This must be a
+            minimum of 8 alpha-numeric characters.
+          format: password
+          minLength: 8
           type: string
         createdAt:
           description: The time the resource was created.

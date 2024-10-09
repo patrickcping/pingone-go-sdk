@@ -1101,6 +1101,15 @@ components:
             assignActorRoles:
               type: boolean
               description: A boolean that specifies whether the permissions service should assign default roles to the application. This property is set only on the POST request. The property is ignored when included in a PUT request.
+            clientId:
+              type: string
+              minLength: 8
+              description: (Required when `clientSecret` is specified.) Supported only for `POST` operations. This is the UUID of an external application that is being migrated to PingOne. The UUID must be a minimum of 8 alpha-numeric characters, and must be globally unique in PingOne.
+            clientSecret:
+              type: string
+              format: password
+              minLength: 8
+              description: (Required when `clientId` is specified.) Supported only for `POST` operations. This is the client secret associated with `clientId` for an external application that is being migrated to PingOne. This must be a minimum of 8 alpha-numeric characters.
             corsSettings:
               $ref: '#/components/schemas/ApplicationCorsSettings'
             devicePathId:
@@ -5626,6 +5635,15 @@ components:
         audience:
           type: string
           description: A string that specifies a URL without a fragment or `@ObjectName` and must not contain `pingone` or `pingidentity` (for example, `https://api.bxretail.org`). If a URL is not specified, the resource name is used.
+        clientId:
+          type: string
+          minLength: 8
+          description: (Required when `clientSecret` is specified.) Supported only for the `POST` operation. This is the UUID of an external resource that is being migrated to PingOne. The UUID must be a minimum of 8 alpha-numeric characters, and must be globally unique in PingOne.
+        clientSecret:
+          type: string
+          format: password
+          minLength: 8
+          description: (Required when clientId is specified.) Supported only for the POST operation. This is the client secret associated with clientId for an external resource that is being migrated to PingOne. This must be a minimum of 8 alpha-numeric characters.
         createdAt:
           type: string
           format: date-time

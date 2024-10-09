@@ -26,6 +26,10 @@ type Resource struct {
 	ApplicationPermissionsSettings *ResourceApplicationPermissionsSettings `json:"applicationPermissionsSettings,omitempty"`
 	// A string that specifies a URL without a fragment or `@ObjectName` and must not contain `pingone` or `pingidentity` (for example, `https://api.bxretail.org`). If a URL is not specified, the resource name is used.
 	Audience *string `json:"audience,omitempty"`
+	// (Required when `clientSecret` is specified.) Supported only for the `POST` operation. This is the UUID of an external resource that is being migrated to PingOne. The UUID must be a minimum of 8 alpha-numeric characters, and must be globally unique in PingOne.
+	ClientId *string `json:"clientId,omitempty"`
+	// (Required when clientId is specified.) Supported only for the POST operation. This is the client secret associated with clientId for an external resource that is being migrated to PingOne. This must be a minimum of 8 alpha-numeric characters.
+	ClientSecret *string `json:"clientSecret,omitempty"`
 	// The time the resource was created.
 	CreatedAt *time.Time `json:"createdAt,omitempty"`
 	// A string that specifies the description of the resource.
@@ -186,6 +190,70 @@ func (o *Resource) HasAudience() bool {
 // SetAudience gets a reference to the given string and assigns it to the Audience field.
 func (o *Resource) SetAudience(v string) {
 	o.Audience = &v
+}
+
+// GetClientId returns the ClientId field value if set, zero value otherwise.
+func (o *Resource) GetClientId() string {
+	if o == nil || IsNil(o.ClientId) {
+		var ret string
+		return ret
+	}
+	return *o.ClientId
+}
+
+// GetClientIdOk returns a tuple with the ClientId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Resource) GetClientIdOk() (*string, bool) {
+	if o == nil || IsNil(o.ClientId) {
+		return nil, false
+	}
+	return o.ClientId, true
+}
+
+// HasClientId returns a boolean if a field has been set.
+func (o *Resource) HasClientId() bool {
+	if o != nil && !IsNil(o.ClientId) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientId gets a reference to the given string and assigns it to the ClientId field.
+func (o *Resource) SetClientId(v string) {
+	o.ClientId = &v
+}
+
+// GetClientSecret returns the ClientSecret field value if set, zero value otherwise.
+func (o *Resource) GetClientSecret() string {
+	if o == nil || IsNil(o.ClientSecret) {
+		var ret string
+		return ret
+	}
+	return *o.ClientSecret
+}
+
+// GetClientSecretOk returns a tuple with the ClientSecret field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Resource) GetClientSecretOk() (*string, bool) {
+	if o == nil || IsNil(o.ClientSecret) {
+		return nil, false
+	}
+	return o.ClientSecret, true
+}
+
+// HasClientSecret returns a boolean if a field has been set.
+func (o *Resource) HasClientSecret() bool {
+	if o != nil && !IsNil(o.ClientSecret) {
+		return true
+	}
+
+	return false
+}
+
+// SetClientSecret gets a reference to the given string and assigns it to the ClientSecret field.
+func (o *Resource) SetClientSecret(v string) {
+	o.ClientSecret = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -489,6 +557,12 @@ func (o Resource) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Audience) {
 		toSerialize["audience"] = o.Audience
+	}
+	if !IsNil(o.ClientId) {
+		toSerialize["clientId"] = o.ClientId
+	}
+	if !IsNil(o.ClientSecret) {
+		toSerialize["clientSecret"] = o.ClientSecret
 	}
 	if !IsNil(o.CreatedAt) {
 		toSerialize["createdAt"] = o.CreatedAt

@@ -1,6 +1,7 @@
-# v0.43.1 (Unreleased)
+# v0.44.0 (Unreleased)
 
 * **Note** Upgraded go version to 1.22 to align with the go [release policy](https://go.dev/doc/devel/release#policy). [#376](https://github.com/patrickcping/pingone-go-sdk-v2/pull/376)
+* **Enhancement** Added the ability to create applications with a custom client ID and secret. [#377](https://github.com/patrickcping/pingone-go-sdk-v2/pull/377)
 
 # v0.43.0 (2024-07-22)
 

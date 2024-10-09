@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **AccessTokenValiditySeconds** | Pointer to **int32** | An integer that specifies the number of seconds that the access token is valid. If a value is not specified, the default is 3600. The minimum value is 300 seconds (5 minutes); the maximum value is 2592000 seconds (30 days). | [optional] 
 **ApplicationPermissionsSettings** | Pointer to [**ResourceApplicationPermissionsSettings**](ResourceApplicationPermissionsSettings.md) |  | [optional] 
 **Audience** | Pointer to **string** | A string that specifies a URL without a fragment or &#x60;@ObjectName&#x60; and must not contain &#x60;pingone&#x60; or &#x60;pingidentity&#x60; (for example, &#x60;https://api.bxretail.org&#x60;). If a URL is not specified, the resource name is used. | [optional] 
+**ClientId** | Pointer to **string** | (Required when &#x60;clientSecret&#x60; is specified.) Supported only for the &#x60;POST&#x60; operation. This is the UUID of an external resource that is being migrated to PingOne. The UUID must be a minimum of 8 alpha-numeric characters, and must be globally unique in PingOne. | [optional] 
+**ClientSecret** | Pointer to **string** | (Required when clientId is specified.) Supported only for the POST operation. This is the client secret associated with clientId for an external resource that is being migrated to PingOne. This must be a minimum of 8 alpha-numeric characters. | [optional] 
 **CreatedAt** | Pointer to **time.Time** | The time the resource was created. | [optional] [readonly] 
 **Description** | Pointer to **string** | The application resource&#39;s description. | [optional] 
 **Environment** | Pointer to [**ObjectEnvironment**](ObjectEnvironment.md) |  | [optional] 
@@ -137,6 +139,56 @@ SetAudience sets Audience field to given value.
 `func (o *EntityArrayEmbeddedResourcesInner) HasAudience() bool`
 
 HasAudience returns a boolean if a field has been set.
+
+### GetClientId
+
+`func (o *EntityArrayEmbeddedResourcesInner) GetClientId() string`
+
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
+
+### GetClientIdOk
+
+`func (o *EntityArrayEmbeddedResourcesInner) GetClientIdOk() (*string, bool)`
+
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientId
+
+`func (o *EntityArrayEmbeddedResourcesInner) SetClientId(v string)`
+
+SetClientId sets ClientId field to given value.
+
+### HasClientId
+
+`func (o *EntityArrayEmbeddedResourcesInner) HasClientId() bool`
+
+HasClientId returns a boolean if a field has been set.
+
+### GetClientSecret
+
+`func (o *EntityArrayEmbeddedResourcesInner) GetClientSecret() string`
+
+GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
+
+### GetClientSecretOk
+
+`func (o *EntityArrayEmbeddedResourcesInner) GetClientSecretOk() (*string, bool)`
+
+GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSecret
+
+`func (o *EntityArrayEmbeddedResourcesInner) SetClientSecret(v string)`
+
+SetClientSecret sets ClientSecret field to given value.
+
+### HasClientSecret
+
+`func (o *EntityArrayEmbeddedResourcesInner) HasClientSecret() bool`
+
+HasClientSecret returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

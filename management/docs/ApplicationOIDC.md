@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **AdditionalRefreshTokenReplayProtectionEnabled** | Pointer to **bool** | When set to &#x60;true&#x60; (the default), if you attempt to reuse the refresh token, the authorization server immediately revokes the reused refresh token, as well as all descendant tokens. Setting this to null equates to a &#x60;false&#x60; setting. | [optional] [default to true]
 **AllowWildcardInRedirectUris** | Pointer to **bool** | A boolean to specify whether wildcards are allowed in redirect URIs. For more information, see [Wildcards in Redirect URIs](https://docs.pingidentity.com/csh?context&#x3D;p1_c_wildcard_redirect_uri). | [optional] 
 **AssignActorRoles** | Pointer to **bool** | A boolean that specifies whether the permissions service should assign default roles to the application. This property is set only on the POST request. The property is ignored when included in a PUT request. | [optional] 
+**ClientId** | Pointer to **string** | (Required when &#x60;clientSecret&#x60; is specified.) Supported only for &#x60;POST&#x60; operations. This is the UUID of an external application that is being migrated to PingOne. The UUID must be a minimum of 8 alpha-numeric characters, and must be globally unique in PingOne. | [optional] 
+**ClientSecret** | Pointer to **string** | (Required when &#x60;clientId&#x60; is specified.) Supported only for &#x60;POST&#x60; operations. This is the client secret associated with &#x60;clientId&#x60; for an external application that is being migrated to PingOne. This must be a minimum of 8 alpha-numeric characters. | [optional] 
 **CorsSettings** | Pointer to [**ApplicationCorsSettings**](ApplicationCorsSettings.md) |  | [optional] 
 **DevicePathId** | Pointer to **string** | A string that specifies a unique identifier within an environment for a device authorization grant flow to provide a short identifier to the application. This property is ignored when the &#x60;deviceCustomVerificationUri&#x60; property is configured. The string can contain any letters, numbers, and some special characters (regex &#x60;a-zA-Z0-9_-&#x60;). It can have a length of no more than 50 characters (&#x60;min&#x60;/&#x60;max&#x60;&#x3D;&#x60;1&#x60;/&#x60;50&#x60;). | [optional] 
 **DeviceCustomVerificationUri** | Pointer to **string** | A string that specifies an optional custom verification URI that is returned for the &#x60;/device_authorization&#x60; endpoint. | [optional] 
@@ -475,6 +477,56 @@ SetAssignActorRoles sets AssignActorRoles field to given value.
 `func (o *ApplicationOIDC) HasAssignActorRoles() bool`
 
 HasAssignActorRoles returns a boolean if a field has been set.
+
+### GetClientId
+
+`func (o *ApplicationOIDC) GetClientId() string`
+
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
+
+### GetClientIdOk
+
+`func (o *ApplicationOIDC) GetClientIdOk() (*string, bool)`
+
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientId
+
+`func (o *ApplicationOIDC) SetClientId(v string)`
+
+SetClientId sets ClientId field to given value.
+
+### HasClientId
+
+`func (o *ApplicationOIDC) HasClientId() bool`
+
+HasClientId returns a boolean if a field has been set.
+
+### GetClientSecret
+
+`func (o *ApplicationOIDC) GetClientSecret() string`
+
+GetClientSecret returns the ClientSecret field if non-nil, zero value otherwise.
+
+### GetClientSecretOk
+
+`func (o *ApplicationOIDC) GetClientSecretOk() (*string, bool)`
+
+GetClientSecretOk returns a tuple with the ClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientSecret
+
+`func (o *ApplicationOIDC) SetClientSecret(v string)`
+
+SetClientSecret sets ClientSecret field to given value.
+
+### HasClientSecret
+
+`func (o *ApplicationOIDC) HasClientSecret() bool`
+
+HasClientSecret returns a boolean if a field has been set.
 
 ### GetCorsSettings
 
