@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## CreateUser
 
-> User CreateUser(ctx, environmentID).ContentType(contentType).User(user).Execute()
+> User CreateUser(ctx, environmentID).ContentType(contentType).RequestBody(requestBody).Execute()
 
 CREATE User
 
@@ -38,11 +38,11 @@ import (
 func main() {
     environmentID := "environmentID_example" // string | 
     contentType := "application/vnd.pingidentity.user.import+json" // string |  (optional)
-    user := *openapiclient.NewUser("Email_example", "Username_example") // User |  (optional)
+    requestBody := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.CreateUser(context.Background(), environmentID).ContentType(contentType).User(user).Execute()
+    resp, r, err := apiClient.UsersApi.CreateUser(context.Background(), environmentID).ContentType(contentType).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.CreateUser``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **contentType** | **string** |  | 
- **user** | [**User**](User.md) |  | 
+ **requestBody** | **map[string]interface{}** |  | 
 
 ### Return type
 
@@ -587,7 +587,7 @@ Name | Type | Description  | Notes
 
 ## UpdateUserPatch
 
-> User UpdateUserPatch(ctx, environmentID, userID).User(user).Execute()
+> User UpdateUserPatch(ctx, environmentID, userID).RequestBody(requestBody).Execute()
 
 UPDATE User (Patch)
 
@@ -606,11 +606,11 @@ import (
 func main() {
     environmentID := "environmentID_example" // string | 
     userID := "userID_example" // string | 
-    user := *openapiclient.NewUser("Email_example", "Username_example") // User |  (optional)
+    requestBody := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UpdateUserPatch(context.Background(), environmentID, userID).User(user).Execute()
+    resp, r, err := apiClient.UsersApi.UpdateUserPatch(context.Background(), environmentID, userID).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UpdateUserPatch``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -638,7 +638,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **user** | [**User**](User.md) |  | 
+ **requestBody** | **map[string]interface{}** |  | 
 
 ### Return type
 
@@ -660,7 +660,7 @@ Name | Type | Description  | Notes
 
 ## UpdateUserPut
 
-> User UpdateUserPut(ctx, environmentID, userID).User(user).Execute()
+> User UpdateUserPut(ctx, environmentID, userID).RequestBody(requestBody).Execute()
 
 UPDATE User (Put)
 
@@ -679,11 +679,11 @@ import (
 func main() {
     environmentID := "environmentID_example" // string | 
     userID := "userID_example" // string | 
-    user := *openapiclient.NewUser("Email_example", "Username_example") // User |  (optional)
+    requestBody := map[string]interface{}{"key": interface{}(123)} // map[string]interface{} |  (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.UsersApi.UpdateUserPut(context.Background(), environmentID, userID).User(user).Execute()
+    resp, r, err := apiClient.UsersApi.UpdateUserPut(context.Background(), environmentID, userID).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UsersApi.UpdateUserPut``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -711,7 +711,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **user** | [**User**](User.md) |  | 
+ **requestBody** | **map[string]interface{}** |  | 
 
 ### Return type
 

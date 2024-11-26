@@ -70,7 +70,10 @@ type User struct {
 	// A string that specifies the user name, which must be provided and must be unique within an environment. The username must either be a well-formed email address or a string. The string can contain any letters, numbers, combining characters, math and currency symbols, dingbats and drawing characters, and invisible whitespace (regex `^[\\p{L}\\p{M}\\p{Zs}\\p{S}\\p{N}\\p{P}]*$`). It can have a length of no more than 128 characters (min/max=1/128).
 	Username string `json:"username"`
 	VerifyStatus *EnumUserVerifyStatus `json:"verifyStatus,omitempty"`
+	AdditionalProperties map[string]interface{}
 }
+
+type _User User
 
 // NewUser instantiates a new User object
 // This constructor will assign default values to properties that have it defined,
@@ -1166,7 +1169,63 @@ func (o User) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VerifyStatus) {
 		toSerialize["verifyStatus"] = o.VerifyStatus
 	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
 	return toSerialize, nil
+}
+
+func (o *User) UnmarshalJSON(bytes []byte) (err error) {
+	varUser := _User{}
+
+	err = json.Unmarshal(bytes, &varUser)
+
+	if err != nil {
+		return err
+	}
+
+	*o = User(varUser)
+
+	additionalProperties := make(map[string]interface{})
+
+	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "_links")
+		delete(additionalProperties, "account")
+		delete(additionalProperties, "address")
+		delete(additionalProperties, "createdAt")
+		delete(additionalProperties, "email")
+		delete(additionalProperties, "emailVerified")
+		delete(additionalProperties, "enabled")
+		delete(additionalProperties, "environment")
+		delete(additionalProperties, "externalId")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "identityProvider")
+		delete(additionalProperties, "lastSignOn")
+		delete(additionalProperties, "lifecycle")
+		delete(additionalProperties, "locale")
+		delete(additionalProperties, "memberOfGroupIDs")
+		delete(additionalProperties, "memberOfGroupNames")
+		delete(additionalProperties, "mfaEnabled")
+		delete(additionalProperties, "mobilePhone")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "nickname")
+		delete(additionalProperties, "password")
+		delete(additionalProperties, "photo")
+		delete(additionalProperties, "population")
+		delete(additionalProperties, "preferredLanguage")
+		delete(additionalProperties, "primaryPhone")
+		delete(additionalProperties, "timezone")
+		delete(additionalProperties, "title")
+		delete(additionalProperties, "type")
+		delete(additionalProperties, "updatedAt")
+		delete(additionalProperties, "username")
+		delete(additionalProperties, "verifyStatus")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
 }
 
 type NullableUser struct {

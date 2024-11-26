@@ -7588,6 +7588,7 @@ components:
       required:
         - email
         - username
+      additionalProperties: true
     UserApplicationRoleAssignment:
       type: object
       properties:
