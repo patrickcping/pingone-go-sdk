@@ -21,6 +21,15 @@ var _ MappedNullable = &EntityArrayEmbedded{}
 type EntityArrayEmbedded struct {
 	ApiServers []APIServer `json:"apiServers,omitempty"`
 	Assignments []ApplicationRoleAssignment `json:"assignments,omitempty"`
+	AuthorizationAttributes []AuthorizeEditorDataDefinitionsAttributeDefinitionDTO `json:"authorizationAttributes,omitempty"`
+	AuthorizationConditions []AuthorizeEditorDataDefinitionsConditionDefinitionDTO `json:"authorizationConditions,omitempty"`
+	AuthorizationConnectorTemplates []AuthorizeEditorDataConnectorsConnectorTemplateDTO `json:"authorizationConnectorTemplates,omitempty"`
+	AuthorizationPolicies []AuthorizeEditorDataPoliciesReferenceablePolicyDTO `json:"authorizationPolicies,omitempty"`
+	AuthorizationProcessors []AuthorizeEditorDataDefinitionsProcessorDefinitionDTO `json:"authorizationProcessors,omitempty"`
+	AuthorizationRules []AuthorizeEditorDataRulesReferenceableRuleDTO `json:"authorizationRules,omitempty"`
+	AuthorizationServices []AuthorizeEditorDataDefinitionsServiceDefinitionDTO `json:"authorizationServices,omitempty"`
+	AuthorizationStatements []AuthorizeEditorDataStatementsReferenceableStatementDTO `json:"authorizationStatements,omitempty"`
+	AuthorizationVersions []AuthorizeEditorDataAuthorizationVersionDTO `json:"authorizationVersions,omitempty"`
 	DecisionEndpoints []DecisionEndpoint `json:"decisionEndpoints,omitempty"`
 	Operations []APIServerOperation `json:"operations,omitempty"`
 	Permissions []EntityArrayEmbeddedPermissionsInner `json:"permissions,omitempty"`
@@ -107,6 +116,294 @@ func (o *EntityArrayEmbedded) HasAssignments() bool {
 // SetAssignments gets a reference to the given []ApplicationRoleAssignment and assigns it to the Assignments field.
 func (o *EntityArrayEmbedded) SetAssignments(v []ApplicationRoleAssignment) {
 	o.Assignments = v
+}
+
+// GetAuthorizationAttributes returns the AuthorizationAttributes field value if set, zero value otherwise.
+func (o *EntityArrayEmbedded) GetAuthorizationAttributes() []AuthorizeEditorDataDefinitionsAttributeDefinitionDTO {
+	if o == nil || IsNil(o.AuthorizationAttributes) {
+		var ret []AuthorizeEditorDataDefinitionsAttributeDefinitionDTO
+		return ret
+	}
+	return o.AuthorizationAttributes
+}
+
+// GetAuthorizationAttributesOk returns a tuple with the AuthorizationAttributes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntityArrayEmbedded) GetAuthorizationAttributesOk() ([]AuthorizeEditorDataDefinitionsAttributeDefinitionDTO, bool) {
+	if o == nil || IsNil(o.AuthorizationAttributes) {
+		return nil, false
+	}
+	return o.AuthorizationAttributes, true
+}
+
+// HasAuthorizationAttributes returns a boolean if a field has been set.
+func (o *EntityArrayEmbedded) HasAuthorizationAttributes() bool {
+	if o != nil && !IsNil(o.AuthorizationAttributes) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthorizationAttributes gets a reference to the given []AuthorizeEditorDataDefinitionsAttributeDefinitionDTO and assigns it to the AuthorizationAttributes field.
+func (o *EntityArrayEmbedded) SetAuthorizationAttributes(v []AuthorizeEditorDataDefinitionsAttributeDefinitionDTO) {
+	o.AuthorizationAttributes = v
+}
+
+// GetAuthorizationConditions returns the AuthorizationConditions field value if set, zero value otherwise.
+func (o *EntityArrayEmbedded) GetAuthorizationConditions() []AuthorizeEditorDataDefinitionsConditionDefinitionDTO {
+	if o == nil || IsNil(o.AuthorizationConditions) {
+		var ret []AuthorizeEditorDataDefinitionsConditionDefinitionDTO
+		return ret
+	}
+	return o.AuthorizationConditions
+}
+
+// GetAuthorizationConditionsOk returns a tuple with the AuthorizationConditions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntityArrayEmbedded) GetAuthorizationConditionsOk() ([]AuthorizeEditorDataDefinitionsConditionDefinitionDTO, bool) {
+	if o == nil || IsNil(o.AuthorizationConditions) {
+		return nil, false
+	}
+	return o.AuthorizationConditions, true
+}
+
+// HasAuthorizationConditions returns a boolean if a field has been set.
+func (o *EntityArrayEmbedded) HasAuthorizationConditions() bool {
+	if o != nil && !IsNil(o.AuthorizationConditions) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthorizationConditions gets a reference to the given []AuthorizeEditorDataDefinitionsConditionDefinitionDTO and assigns it to the AuthorizationConditions field.
+func (o *EntityArrayEmbedded) SetAuthorizationConditions(v []AuthorizeEditorDataDefinitionsConditionDefinitionDTO) {
+	o.AuthorizationConditions = v
+}
+
+// GetAuthorizationConnectorTemplates returns the AuthorizationConnectorTemplates field value if set, zero value otherwise.
+func (o *EntityArrayEmbedded) GetAuthorizationConnectorTemplates() []AuthorizeEditorDataConnectorsConnectorTemplateDTO {
+	if o == nil || IsNil(o.AuthorizationConnectorTemplates) {
+		var ret []AuthorizeEditorDataConnectorsConnectorTemplateDTO
+		return ret
+	}
+	return o.AuthorizationConnectorTemplates
+}
+
+// GetAuthorizationConnectorTemplatesOk returns a tuple with the AuthorizationConnectorTemplates field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntityArrayEmbedded) GetAuthorizationConnectorTemplatesOk() ([]AuthorizeEditorDataConnectorsConnectorTemplateDTO, bool) {
+	if o == nil || IsNil(o.AuthorizationConnectorTemplates) {
+		return nil, false
+	}
+	return o.AuthorizationConnectorTemplates, true
+}
+
+// HasAuthorizationConnectorTemplates returns a boolean if a field has been set.
+func (o *EntityArrayEmbedded) HasAuthorizationConnectorTemplates() bool {
+	if o != nil && !IsNil(o.AuthorizationConnectorTemplates) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthorizationConnectorTemplates gets a reference to the given []AuthorizeEditorDataConnectorsConnectorTemplateDTO and assigns it to the AuthorizationConnectorTemplates field.
+func (o *EntityArrayEmbedded) SetAuthorizationConnectorTemplates(v []AuthorizeEditorDataConnectorsConnectorTemplateDTO) {
+	o.AuthorizationConnectorTemplates = v
+}
+
+// GetAuthorizationPolicies returns the AuthorizationPolicies field value if set, zero value otherwise.
+func (o *EntityArrayEmbedded) GetAuthorizationPolicies() []AuthorizeEditorDataPoliciesReferenceablePolicyDTO {
+	if o == nil || IsNil(o.AuthorizationPolicies) {
+		var ret []AuthorizeEditorDataPoliciesReferenceablePolicyDTO
+		return ret
+	}
+	return o.AuthorizationPolicies
+}
+
+// GetAuthorizationPoliciesOk returns a tuple with the AuthorizationPolicies field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntityArrayEmbedded) GetAuthorizationPoliciesOk() ([]AuthorizeEditorDataPoliciesReferenceablePolicyDTO, bool) {
+	if o == nil || IsNil(o.AuthorizationPolicies) {
+		return nil, false
+	}
+	return o.AuthorizationPolicies, true
+}
+
+// HasAuthorizationPolicies returns a boolean if a field has been set.
+func (o *EntityArrayEmbedded) HasAuthorizationPolicies() bool {
+	if o != nil && !IsNil(o.AuthorizationPolicies) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthorizationPolicies gets a reference to the given []AuthorizeEditorDataPoliciesReferenceablePolicyDTO and assigns it to the AuthorizationPolicies field.
+func (o *EntityArrayEmbedded) SetAuthorizationPolicies(v []AuthorizeEditorDataPoliciesReferenceablePolicyDTO) {
+	o.AuthorizationPolicies = v
+}
+
+// GetAuthorizationProcessors returns the AuthorizationProcessors field value if set, zero value otherwise.
+func (o *EntityArrayEmbedded) GetAuthorizationProcessors() []AuthorizeEditorDataDefinitionsProcessorDefinitionDTO {
+	if o == nil || IsNil(o.AuthorizationProcessors) {
+		var ret []AuthorizeEditorDataDefinitionsProcessorDefinitionDTO
+		return ret
+	}
+	return o.AuthorizationProcessors
+}
+
+// GetAuthorizationProcessorsOk returns a tuple with the AuthorizationProcessors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntityArrayEmbedded) GetAuthorizationProcessorsOk() ([]AuthorizeEditorDataDefinitionsProcessorDefinitionDTO, bool) {
+	if o == nil || IsNil(o.AuthorizationProcessors) {
+		return nil, false
+	}
+	return o.AuthorizationProcessors, true
+}
+
+// HasAuthorizationProcessors returns a boolean if a field has been set.
+func (o *EntityArrayEmbedded) HasAuthorizationProcessors() bool {
+	if o != nil && !IsNil(o.AuthorizationProcessors) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthorizationProcessors gets a reference to the given []AuthorizeEditorDataDefinitionsProcessorDefinitionDTO and assigns it to the AuthorizationProcessors field.
+func (o *EntityArrayEmbedded) SetAuthorizationProcessors(v []AuthorizeEditorDataDefinitionsProcessorDefinitionDTO) {
+	o.AuthorizationProcessors = v
+}
+
+// GetAuthorizationRules returns the AuthorizationRules field value if set, zero value otherwise.
+func (o *EntityArrayEmbedded) GetAuthorizationRules() []AuthorizeEditorDataRulesReferenceableRuleDTO {
+	if o == nil || IsNil(o.AuthorizationRules) {
+		var ret []AuthorizeEditorDataRulesReferenceableRuleDTO
+		return ret
+	}
+	return o.AuthorizationRules
+}
+
+// GetAuthorizationRulesOk returns a tuple with the AuthorizationRules field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntityArrayEmbedded) GetAuthorizationRulesOk() ([]AuthorizeEditorDataRulesReferenceableRuleDTO, bool) {
+	if o == nil || IsNil(o.AuthorizationRules) {
+		return nil, false
+	}
+	return o.AuthorizationRules, true
+}
+
+// HasAuthorizationRules returns a boolean if a field has been set.
+func (o *EntityArrayEmbedded) HasAuthorizationRules() bool {
+	if o != nil && !IsNil(o.AuthorizationRules) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthorizationRules gets a reference to the given []AuthorizeEditorDataRulesReferenceableRuleDTO and assigns it to the AuthorizationRules field.
+func (o *EntityArrayEmbedded) SetAuthorizationRules(v []AuthorizeEditorDataRulesReferenceableRuleDTO) {
+	o.AuthorizationRules = v
+}
+
+// GetAuthorizationServices returns the AuthorizationServices field value if set, zero value otherwise.
+func (o *EntityArrayEmbedded) GetAuthorizationServices() []AuthorizeEditorDataDefinitionsServiceDefinitionDTO {
+	if o == nil || IsNil(o.AuthorizationServices) {
+		var ret []AuthorizeEditorDataDefinitionsServiceDefinitionDTO
+		return ret
+	}
+	return o.AuthorizationServices
+}
+
+// GetAuthorizationServicesOk returns a tuple with the AuthorizationServices field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntityArrayEmbedded) GetAuthorizationServicesOk() ([]AuthorizeEditorDataDefinitionsServiceDefinitionDTO, bool) {
+	if o == nil || IsNil(o.AuthorizationServices) {
+		return nil, false
+	}
+	return o.AuthorizationServices, true
+}
+
+// HasAuthorizationServices returns a boolean if a field has been set.
+func (o *EntityArrayEmbedded) HasAuthorizationServices() bool {
+	if o != nil && !IsNil(o.AuthorizationServices) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthorizationServices gets a reference to the given []AuthorizeEditorDataDefinitionsServiceDefinitionDTO and assigns it to the AuthorizationServices field.
+func (o *EntityArrayEmbedded) SetAuthorizationServices(v []AuthorizeEditorDataDefinitionsServiceDefinitionDTO) {
+	o.AuthorizationServices = v
+}
+
+// GetAuthorizationStatements returns the AuthorizationStatements field value if set, zero value otherwise.
+func (o *EntityArrayEmbedded) GetAuthorizationStatements() []AuthorizeEditorDataStatementsReferenceableStatementDTO {
+	if o == nil || IsNil(o.AuthorizationStatements) {
+		var ret []AuthorizeEditorDataStatementsReferenceableStatementDTO
+		return ret
+	}
+	return o.AuthorizationStatements
+}
+
+// GetAuthorizationStatementsOk returns a tuple with the AuthorizationStatements field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntityArrayEmbedded) GetAuthorizationStatementsOk() ([]AuthorizeEditorDataStatementsReferenceableStatementDTO, bool) {
+	if o == nil || IsNil(o.AuthorizationStatements) {
+		return nil, false
+	}
+	return o.AuthorizationStatements, true
+}
+
+// HasAuthorizationStatements returns a boolean if a field has been set.
+func (o *EntityArrayEmbedded) HasAuthorizationStatements() bool {
+	if o != nil && !IsNil(o.AuthorizationStatements) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthorizationStatements gets a reference to the given []AuthorizeEditorDataStatementsReferenceableStatementDTO and assigns it to the AuthorizationStatements field.
+func (o *EntityArrayEmbedded) SetAuthorizationStatements(v []AuthorizeEditorDataStatementsReferenceableStatementDTO) {
+	o.AuthorizationStatements = v
+}
+
+// GetAuthorizationVersions returns the AuthorizationVersions field value if set, zero value otherwise.
+func (o *EntityArrayEmbedded) GetAuthorizationVersions() []AuthorizeEditorDataAuthorizationVersionDTO {
+	if o == nil || IsNil(o.AuthorizationVersions) {
+		var ret []AuthorizeEditorDataAuthorizationVersionDTO
+		return ret
+	}
+	return o.AuthorizationVersions
+}
+
+// GetAuthorizationVersionsOk returns a tuple with the AuthorizationVersions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntityArrayEmbedded) GetAuthorizationVersionsOk() ([]AuthorizeEditorDataAuthorizationVersionDTO, bool) {
+	if o == nil || IsNil(o.AuthorizationVersions) {
+		return nil, false
+	}
+	return o.AuthorizationVersions, true
+}
+
+// HasAuthorizationVersions returns a boolean if a field has been set.
+func (o *EntityArrayEmbedded) HasAuthorizationVersions() bool {
+	if o != nil && !IsNil(o.AuthorizationVersions) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthorizationVersions gets a reference to the given []AuthorizeEditorDataAuthorizationVersionDTO and assigns it to the AuthorizationVersions field.
+func (o *EntityArrayEmbedded) SetAuthorizationVersions(v []AuthorizeEditorDataAuthorizationVersionDTO) {
+	o.AuthorizationVersions = v
 }
 
 // GetDecisionEndpoints returns the DecisionEndpoints field value if set, zero value otherwise.
@@ -284,6 +581,33 @@ func (o EntityArrayEmbedded) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Assignments) {
 		toSerialize["assignments"] = o.Assignments
+	}
+	if !IsNil(o.AuthorizationAttributes) {
+		toSerialize["authorizationAttributes"] = o.AuthorizationAttributes
+	}
+	if !IsNil(o.AuthorizationConditions) {
+		toSerialize["authorizationConditions"] = o.AuthorizationConditions
+	}
+	if !IsNil(o.AuthorizationConnectorTemplates) {
+		toSerialize["authorizationConnectorTemplates"] = o.AuthorizationConnectorTemplates
+	}
+	if !IsNil(o.AuthorizationPolicies) {
+		toSerialize["authorizationPolicies"] = o.AuthorizationPolicies
+	}
+	if !IsNil(o.AuthorizationProcessors) {
+		toSerialize["authorizationProcessors"] = o.AuthorizationProcessors
+	}
+	if !IsNil(o.AuthorizationRules) {
+		toSerialize["authorizationRules"] = o.AuthorizationRules
+	}
+	if !IsNil(o.AuthorizationServices) {
+		toSerialize["authorizationServices"] = o.AuthorizationServices
+	}
+	if !IsNil(o.AuthorizationStatements) {
+		toSerialize["authorizationStatements"] = o.AuthorizationStatements
+	}
+	if !IsNil(o.AuthorizationVersions) {
+		toSerialize["authorizationVersions"] = o.AuthorizationVersions
 	}
 	if !IsNil(o.DecisionEndpoints) {
 		toSerialize["decisionEndpoints"] = o.DecisionEndpoints

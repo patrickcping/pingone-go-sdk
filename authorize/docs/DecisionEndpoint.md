@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | A string that specifies the resource’s unique identifier. | [optional] [readonly] 
 **Name** | **string** | A string that specifies the policy decision resource name. | 
 **Owned** | Pointer to **bool** | A boolean that when true restricts modifications of the endpoint to PingOne-owned clients. | [optional] 
-**PolicyId** | Pointer to **string** | A string that specifies the ID of the root policy configured for this endpoint. If omitted, the policy editor service decides on a suitable default. | [optional] 
-**Provenance** | Pointer to **string** | A string that specifies a machine-readable identifier indicating the provenance of the current configuration. It has no meaning to the Policy Decision Service itself but exists to support integration with other services. | [optional] 
+**PolicyID** | Pointer to **string** | A string that specifies the ID of the root policy configured for this endpoint. If omitted, the policy editor service decides on a suitable default. | [optional] 
+**Provenance** | Pointer to **string** | A string that specifies a machine-readable identifier indicating the provenance of the current configuration. It has no meaning to the Policy Decision Service itself but exists to support integration with other Services | [optional] 
 **RecentDecisionsEnabled** | Pointer to **bool** | A boolean that specifies whether to show recent decisions. | [optional] 
 **RecentDecisions** | Pointer to [**DecisionEndpointRecentDecisions**](DecisionEndpointRecentDecisions.md) |  | [optional] 
 **RecordRecentRequests** | **bool** | A boolean that specifies whether to record a limited history of recent decision requests and responses, which can be queried through a separate API. | 
@@ -201,30 +201,30 @@ SetOwned sets Owned field to given value.
 
 HasOwned returns a boolean if a field has been set.
 
-### GetPolicyId
+### GetPolicyID
 
-`func (o *DecisionEndpoint) GetPolicyId() string`
+`func (o *DecisionEndpoint) GetPolicyID() string`
 
-GetPolicyId returns the PolicyId field if non-nil, zero value otherwise.
+GetPolicyID returns the PolicyID field if non-nil, zero value otherwise.
 
-### GetPolicyIdOk
+### GetPolicyIDOk
 
-`func (o *DecisionEndpoint) GetPolicyIdOk() (*string, bool)`
+`func (o *DecisionEndpoint) GetPolicyIDOk() (*string, bool)`
 
-GetPolicyIdOk returns a tuple with the PolicyId field if it's non-nil, zero value otherwise
+GetPolicyIDOk returns a tuple with the PolicyID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPolicyId
+### SetPolicyID
 
-`func (o *DecisionEndpoint) SetPolicyId(v string)`
+`func (o *DecisionEndpoint) SetPolicyID(v string)`
 
-SetPolicyId sets PolicyId field to given value.
+SetPolicyID sets PolicyID field to given value.
 
-### HasPolicyId
+### HasPolicyID
 
-`func (o *DecisionEndpoint) HasPolicyId() bool`
+`func (o *DecisionEndpoint) HasPolicyID() bool`
 
-HasPolicyId returns a boolean if a field has been set.
+HasPolicyID returns a boolean if a field has been set.
 
 ### GetProvenance
 

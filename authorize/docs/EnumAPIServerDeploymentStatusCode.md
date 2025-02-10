@@ -1,0 +1,21 @@
+# EnumAPIServerDeploymentStatusCode
+
+## Enum
+
+
+* `POLICIES_CREATE_IN_PROGRESS` (value: `"POLICIES_CREATE_IN_PROGRESS"`)
+
+* `DECISION_ENDPOINT_CREATE_IN_PROGRESS` (value: `"DECISION_ENDPOINT_CREATE_IN_PROGRESS"`)
+
+* `DECISION_ENDPOINT_UPDATE_IN_PROGRESS` (value: `"DECISION_ENDPOINT_UPDATE_IN_PROGRESS"`)
+
+* `DEPLOYMENT_SUCCESSFUL` (value: `"DEPLOYMENT_SUCCESSFUL"`)
+
+* `DEPLOYMENT_FAILED` (value: `"DEPLOYMENT_FAILED"`)
+
+* `DEPLOYMENT_UNINITIALIZED` (value: `"DEPLOYMENT_UNINITIALIZED"`)
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
