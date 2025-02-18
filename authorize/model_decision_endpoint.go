@@ -32,8 +32,8 @@ type DecisionEndpoint struct {
 	// A boolean that when true restricts modifications of the endpoint to PingOne-owned clients.
 	Owned *bool `json:"owned,omitempty"`
 	// A string that specifies the ID of the root policy configured for this endpoint. If omitted, the policy editor service decides on a suitable default.
-	PolicyId *string `json:"policyId,omitempty"`
-	// A string that specifies a machine-readable identifier indicating the provenance of the current configuration. It has no meaning to the Policy Decision Service itself but exists to support integration with other services.
+	PolicyID *string `json:"policyID,omitempty"`
+	// A string that specifies a machine-readable identifier indicating the provenance of the current configuration. It has no meaning to the Policy Decision Service itself but exists to support integration with other Services
 	Provenance *string `json:"provenance,omitempty"`
 	// A boolean that specifies whether to show recent decisions.
 	RecentDecisionsEnabled *bool `json:"recentDecisionsEnabled,omitempty"`
@@ -270,36 +270,36 @@ func (o *DecisionEndpoint) SetOwned(v bool) {
 	o.Owned = &v
 }
 
-// GetPolicyId returns the PolicyId field value if set, zero value otherwise.
-func (o *DecisionEndpoint) GetPolicyId() string {
-	if o == nil || IsNil(o.PolicyId) {
+// GetPolicyID returns the PolicyID field value if set, zero value otherwise.
+func (o *DecisionEndpoint) GetPolicyID() string {
+	if o == nil || IsNil(o.PolicyID) {
 		var ret string
 		return ret
 	}
-	return *o.PolicyId
+	return *o.PolicyID
 }
 
-// GetPolicyIdOk returns a tuple with the PolicyId field value if set, nil otherwise
+// GetPolicyIDOk returns a tuple with the PolicyID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DecisionEndpoint) GetPolicyIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PolicyId) {
+func (o *DecisionEndpoint) GetPolicyIDOk() (*string, bool) {
+	if o == nil || IsNil(o.PolicyID) {
 		return nil, false
 	}
-	return o.PolicyId, true
+	return o.PolicyID, true
 }
 
-// HasPolicyId returns a boolean if a field has been set.
-func (o *DecisionEndpoint) HasPolicyId() bool {
-	if o != nil && !IsNil(o.PolicyId) {
+// HasPolicyID returns a boolean if a field has been set.
+func (o *DecisionEndpoint) HasPolicyID() bool {
+	if o != nil && !IsNil(o.PolicyID) {
 		return true
 	}
 
 	return false
 }
 
-// SetPolicyId gets a reference to the given string and assigns it to the PolicyId field.
-func (o *DecisionEndpoint) SetPolicyId(v string) {
-	o.PolicyId = &v
+// SetPolicyID gets a reference to the given string and assigns it to the PolicyID field.
+func (o *DecisionEndpoint) SetPolicyID(v string) {
+	o.PolicyID = &v
 }
 
 // GetProvenance returns the Provenance field value if set, zero value otherwise.
@@ -449,8 +449,8 @@ func (o DecisionEndpoint) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Owned) {
 		toSerialize["owned"] = o.Owned
 	}
-	if !IsNil(o.PolicyId) {
-		toSerialize["policyId"] = o.PolicyId
+	if !IsNil(o.PolicyID) {
+		toSerialize["policyID"] = o.PolicyID
 	}
 	if !IsNil(o.Provenance) {
 		toSerialize["provenance"] = o.Provenance

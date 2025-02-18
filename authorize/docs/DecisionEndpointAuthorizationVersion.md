@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | A string that specifies the ID of the Authorization Version deployed to this endpoint. Versioning allows independent development and deployment of policies. If omitted, the endpoint always uses the latest policy version available from the policy editor service. | [optional] 
+**Id** | Pointer to **string** | A string that specifies the ID of the Authorization Version deployed to this endpoint. Versioning allows independent development and deployment of Policies If omitted, the endpoint always uses the latest policy version available from the policy editor service. | [optional] 
 **Href** | Pointer to **string** | A string that specifies the request URL for the authorization version endpoint. | [optional] 
 **Title** | Pointer to **string** | A string that specifies the title for the authorization version response. | [optional] 
 **Type** | Pointer to **string** | A string that specifies the content type for the authorization version response. | [optional] 
